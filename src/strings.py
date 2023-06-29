@@ -72,7 +72,7 @@ def string_indexation():
     #   char_v2 = str_base[12] # Exception: out of range
     char_v3 = str_base[-1]
     #   char_v3 = str_base[-13] # Exception: out of range
-    sub_str_v1 = str_base[3:7]
+    sub_str_v1 = str_base[3:7]  # slicing
     sub_str_v2 = str_base[3:]
     sub_str_v3 = str_base[:7]
     #   str_base[0] = "h" # Exception: immutable object
@@ -86,7 +86,7 @@ def string_indexation():
 
 
 def strings_operators():
-    str_v1 = "Hello " + "python"
+    str_v1 = "Hello " + "python"  # concatenation
     #   str_v1 = "Hello " + 5
     str_v2 = "Hello " * 5
 
@@ -122,5 +122,4 @@ def formatting_string():
 
     print("%d, %.1f, %s, %c, %c" % (10, 10.57654, "Hello", 65, 97))
 
-
-formatting_string()
+    print("%d, %f, %.2f %s, %c, %c" % (10, 10.57654, 10.57654, "Hello", 65, 97))
