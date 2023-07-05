@@ -123,3 +123,38 @@ def formatting_string():
     print("%d, %.1f, %s, %c, %c" % (10, 10.57654, "Hello", 65, 97))
 
     print("%d, %f, %.2f %s, %c, %c" % (10, 10.57654, 10.57654, "Hello", 65, 97))
+
+
+def methods():
+    print("Hello world".center(20))
+    print("Hello world".center(10))
+    print()
+    print("Hello world".find("Hello"))
+    print("Hello world".find("Hello", 0, 4))
+    print("Hello world".find("Hello", 0, 5))
+    print()
+    print("6543".isdecimal())
+    print("-6543".isdecimal())
+    print("06543".isdecimal())
+    print("0x6543".isdecimal())
+    print("6543ab".isdecimal())
+    print()
+    print("Hello world".islower())
+    print("hello world".islower())
+    print()
+    print("Hello world".isupper())
+    print("HELLO WORLD".islower())
+    print()
+    print("Hello World".lower())
+    print()
+    print("hello world".partition(" "))
+    print("hello / world".partition("/"))
+    print("hello \ world".partition("/"))
+    print()
+    print("Hello world".replace("world", "python"))
+    print("Hello world and world".replace("world", "python"))
+    print("Hello world and world".replace("world", "python", 1))
+
+
+
+methods()
