@@ -190,6 +190,21 @@ def arithmetic_operators():
     print("ret_v11", ret_v11)
     print("ret_v12", ret_v12)
 
+    ret_v1 = 8
+    print()
+    print("ret_v1", ret_v1)
+    ret_v1 += 3
+    print("ret_v1", ret_v1)
+    ret_v1 -= 3
+    print("ret_v1", ret_v1)
+    ret_v1 *= 3
+    print("ret_v1", ret_v1)
+    ret_v1 //= 3
+    print("ret_v1", ret_v1)
+    ret_v1 /= 3
+    print("ret_v1", ret_v1)
+
+
 
 def operators_precedence():
 
@@ -214,4 +229,4 @@ def operators_precedence():
     print("ret_v6", ret_v6)
 
 
-operators_precedence()
+arithmetic_operators()
