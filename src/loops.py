@@ -32,6 +32,7 @@ def while_statement():
     tuple_v1 = (547, "Python", list_v1, True)
 
     #  while loop commonly used in case when you don't know amount of loop iteration needed to complete the work
+
     tuple_idx = 0
     while tuple_idx < len(tuple_v1) and not isinstance(tuple_v1[tuple_idx], list):
 
@@ -78,10 +79,10 @@ def continue_statement():
 
 def break_statement():
     tuple_v1 = (547, "Python", True)
-    list_v1 = [546, "I love python", tuple_v1]
+    list_v1 = [546, tuple_v1, "I love python"]
 
     for elem in tuple_v1:
-        if isinstance(elem, bool):
+        if isinstance(elem, str):
             break
 
         print(elem)
