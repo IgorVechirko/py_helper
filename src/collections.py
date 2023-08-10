@@ -127,4 +127,73 @@ def sequences_operators():
     print(range_v1.index(8))
     print(str_v1.index("p"))
 
-sequences_operators()
+
+def list_mutable_operators_and_methods():
+
+    list_v1 = [5, 32, False, (5, 6), "Hello"]
+
+    list_v1[0] = True
+    print(list_v1)
+
+    list_v1[1:3] = "string"  # right value must be iterable object with any length
+    print(list_v1)
+    list_v1[1:7] = (32, False)
+    print(list_v1)
+
+    list_v1.append(6.5)
+    print(list_v1)
+
+    list_v1.extend("string")  # argument must be iterable object
+    # list_v1 += "string"  # the same
+    print(list_v1)
+
+    list_v1 *= 2
+    print(list_v1)
+
+    list_v1[len(list_v1)//2:] = []  # remove half of list
+    print(list_v1)
+
+    list_v1.insert(1, "Python")
+    print(list_v1)
+    list_v1.insert(-1, "Python")
+    print(list_v1)
+    list_v1.insert(100, "Python")
+    print(list_v1)
+
+    elem = list_v1.pop(2)
+    print(list_v1)
+    print(elem)
+
+    # remove half of list
+    new_len = len(list_v1) // 2
+    while len(list_v1) > new_len:
+        elem = list_v1.pop()
+        print(elem)
+
+    print(list_v1)
+
+    list_v1.remove((5, 6))  # remove certain object
+    print(list_v1)
+
+#   if certain object doesn't exist it will throw an error
+#   so to remove object safety check it existing first
+    if (5, 6) in list_v1:
+        list_v1.remove((5, 6))
+
+    list_v1.reverse()
+    print(list_v1)
+
+    list_v1.clear()
+    print(list_v1)
+
+
+def tips():
+    col = (5, 6, 7)
+    var_v1, var_v2, var_v3 = col
+
+    print(var_v1)
+    print(var_v2)
+    print(var_v3)
+
+
+tips()
