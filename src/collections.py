@@ -1,3 +1,6 @@
+import copy
+
+
 def tuple_init():
     tuple_v1 = (5, "Hello", True)
     tuple_v2 = (5, "tuple", tuple_v1)
@@ -140,6 +143,13 @@ def list_mutable_operators_and_methods():
     list_v1[1:7] = (32, False)
     print(list_v1)
 
+    list_v1 += (5, 32)
+    list_v1[-3:-1:1] = (0, 0)
+    print(list_v1)
+
+    list_v1[-3:-1] = []
+    print(list_v1)
+
     list_v1.append(6.5)
     print(list_v1)
 
@@ -187,6 +197,59 @@ def list_mutable_operators_and_methods():
     print(list_v1)
 
 
+def collections_copy():
+    nested_list = ["Hellow", "world", ["By", "by"]]
+    list_v1 = [5, 6, 7, 6, (True, False), nested_list]
+    list_v2 = list_v1
+
+    print(id(list_v1))
+    print(id(list_v2))
+
+    list_copy_v1 = []
+    for elem in list_v1:
+        list_copy_v1.append(elem)
+
+    list_copy_v1.remove(6)
+    nested_list[1] = "python"
+
+    print(id(list_v1), list_v1)
+    print(id(list_copy_v1), list_copy_v1)
+
+    list_copy_v2 = list_v1.copy()  # perform shallow(not deep) copy
+
+    nested_list[1] = "C++"
+
+    print(id(list_v1), list_v1)
+    print(id(list_copy_v2), list_copy_v2)
+
+    list_copy_v3 = copy.copy(list_v1)  # shallow
+    list_copy_v4 = list_v1[:]  # shallow
+
+    nested_list[1] = "Java"
+
+    print(id(list_copy_v3), list_copy_v3)
+    print(id(list_copy_v4), list_copy_v4)
+
+    list_copy_v5 = copy.deepcopy(list_v1)
+
+    nested_list[2][1] = "beautiful"
+
+    print(id(list_copy_v3), list_copy_v3)
+    print(id(list_copy_v5), list_copy_v5)
+
+    tuple_v1 = (5, False, nested_list)
+    tuple_v2 = tuple_v1
+    tuple_v3 = copy.copy(tuple_v2)
+    tuple_v4 = copy.deepcopy(tuple_v3)
+
+    nested_list[2][1] = "ugly"
+
+    print(id(tuple_v1), tuple_v1)
+    print(id(tuple_v2), tuple_v2)
+    print(id(tuple_v3), tuple_v3)
+    print(id(tuple_v4), tuple_v4)
+
+
 def tips():
     col = (5, 6, 7)
     var_v1, var_v2, var_v3 = col
@@ -196,4 +259,4 @@ def tips():
     print(var_v3)
 
 
-tips()
+collections_copy()
