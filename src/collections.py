@@ -324,6 +324,7 @@ def dict_methods():
     print(dict_v1.get(5))
     print(dict_v1.get(6, "Default value"))
     print(dict_v1.get(6))
+    print()
 
     items_view = dict_v1.items()
     keys_view = dict_v1.keys()  # != list(dict_v1)
@@ -335,24 +336,30 @@ def dict_methods():
     print(items_view)
     print(keys_view)
     print(values_view)
+    print()
 
 
     print(dict_v1.pop(5), dict_v1)
     print(dict_v1.pop(6, "Default value"))
 #    print(dict_v1.pop(6)) danger
 
+    dict_v2[6] = 67890
     while len(dict_v2):
         print(dict_v2.popitem())
+    print()
 
-    print(dict_v1.setdefault(None, "Value"), dict_v1)
+    return_def_val = dict_v1.setdefault(876543, "Value")
+    print(return_def_val, dict_v1)
 
     dict_v1.update(dict_v2)  # dict_v1 |= dict_v2
     print(dict_v1)
 
     dict_v1.clear()
+    print(dict_v1)
     print()
 
     print(dict(zip((1, 2, 3, 4, 5), ("Hellow", "world", "python"))))
+    print(dict(zip(range(0, 100), ("Hellow", "world", "python"))))
 
 
 def set_collection():
@@ -419,6 +426,8 @@ def set_methods():
     set_v2 = {1, 2, 3, 4, 5, 6, 7, 8}
     set_v3 = {4, 8, 9, 10, 11, 12}
 
+    print(len(set_v1))
+    print()
 
     print(set_v1.isdisjoint(set_v2))
     # the same
@@ -453,9 +462,9 @@ def set_methods():
     print(diff)
     print()
 
-    diff = set_v1.difference(set_v2, set_v3)
+    diff = set_v1.symmetric_difference(set_v2)
     # the same
-    # diff = set_v1 - set_v2 - set_v3
+    # diff = set_v1 ^ set_v2
     print(diff)
     print()
 
