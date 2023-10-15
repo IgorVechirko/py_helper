@@ -34,6 +34,9 @@ default_args_func(**args_dict)
 args_list = ["Hello"]
 args_dict = {"default_arg1": "Python", "default_arg2": "Hello"}
 default_args_func(*args_list, **args_dict)
+default_args_func("Hello", **args_dict)
+default_args_func(*args_list, default_arg1="A", default_arg2="B")
+default_args_func(default_arg1="A", default_arg2="B", *args_list)
 
 #runtime_formed_default_val=input()
 #default_dict = {"2": 2, "19": 7}
@@ -74,35 +77,12 @@ lambda_val = lambda x, y: x + y
 print(lambda_val(4, 5))
 
 
-def func_with_nested_function(arg1, arg2):
-    def increment(val):
-        if val % 2:
-            return val + 1
-        else:
-            return val + 2
-
-    def decrement(val):
-        if val % 2:
-            return val - 1
-        else:
-            return val - 2
-
-    if arg1 + arg2 > 0:
-        return increment(arg1)
-    elif arg1 - arg2 > 0:
-        return increment(arg2)
-    elif arg2 - arg1 > 0:
-        return decrement(arg1)
-    else:
-        return decrement(arg2)
-
-
-print(func_with_nested_function(5, 6))
-
-
+global_var_for_inner_sample = 543
 def function_return_closures_state_inner_func(arg_var):
     func_var = 20
+    closures_state_global_var_for_inner_sample = global_var_for_inner_sample
     def fun_with_closures_state(base):
+        inner_local_global_var_for_inner_sample = global_var_for_inner_sample
         print(arg_var)
 
     return fun_with_closures_state
@@ -135,7 +115,6 @@ def try_function(arg1):
 
 
 print(try_function("python"))
-
 
 
 def infinity_recursion(level):

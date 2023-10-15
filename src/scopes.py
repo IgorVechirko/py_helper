@@ -1,43 +1,70 @@
 
-def simple_func():
-    #print(func_scope_var)
+sum = "global"  #shadowing builtin statement
 
-    # Function scope variables and another context
-    # created for each instance of function
-    func_scope_var = False
-    print(func_scope_var)
-    func_scope_var = True
-    print(func_scope_var)
+def legb_func():
+    sum = "enclosing"
 
+    def inner_func():
+        sum = "local"
+        print(sum)
 
-def try_use_another_func_var():
-    print(func_scope_var)  # Can't access to another function scope
+    return inner_func
 
+#legb_func()()
 
-def blocks_as_scopes():
+def try_change_global_var():
+    sum = "local"
 
-    condition = False
+def change_global_var():
+    global sum
+    sum = "local"
 
-    if condition:
-        true_scope_var = "Hello"
-        #print(false_scope_var)
-    else:
-        false_scope_var = "world"
-        #print(true_scope_var)
-
-    print(false_scope_var)
-
-    """while True:
-        # for each iteration new scope created
-        while_scope_var = "Python"
-
-    print(while_scope_var)
-
-    for i in range(0, 10):
-        # for each iteration new scope created
-        for_scope_var = "C++"
-
-    print(for_scope_var)"""
+del sum
 
 
-blocks_as_scopes()
+def try_modify_enclosing_var():
+    enclosing_var = 20
+
+    def inner_func():
+        enclosing_var = 30
+
+    inner_func()
+    print(enclosing_var)
+
+def modify_enclosing_var():
+    enclosing_var = 20
+
+    def inner_func():
+        nonlocal enclosing_var
+        enclosing_var = 30
+
+    inner_func()
+    print(enclosing_var)
+
+#modify_enclosing_var()
+
+
+
+
+
+
+"""glob = globals()
+print(glob)
+
+blob_var1 = 1
+glob["glob_var2"] = 2
+
+print(glob)
+print(glob_var2)"""
+
+def locals_sample_func():
+    loc = locals()
+    print(loc)
+
+    loc_var1 = 3
+    loc["loc_var2"] = 4
+
+    print(loc)
+    print(loc_var2)
+
+#locals_sample_func()
