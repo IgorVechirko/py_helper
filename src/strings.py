@@ -106,6 +106,8 @@ def formatting_string():
           pineapple_title, "-", pineapple_count, ",",
           melon_title, "-", melon_count, ".")
 
+    print(f"Fruits count: {apple_tile}-{apple_count}, {pineapple_title}-{pineapple_count}, {melon_title}-{melon_count}.")
+
     print("Fruits count: {}-{}, {}-{}, {}-{}.".format(apple_tile, apple_count,
                                                       pineapple_title, pineapple_count,
                                                       melon_title, melon_count))
