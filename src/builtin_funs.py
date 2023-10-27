@@ -44,5 +44,13 @@ def filter_builtin():
     print(filtered_coll)
 
 
+def hash_and_hex_builtins():
+    obj = (1, "one", 2, "tow", 3, "three")
+    object_hash = hash(obj)
+    print(hex(object_hash))
+
+
+def map_builtin():
+    pass
 
 
