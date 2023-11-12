@@ -1,4 +1,5 @@
 import copy
+import random
 
 
 def tuple_init():
@@ -523,4 +524,37 @@ def tips():
     print(var_v3)
 
 
-set_methods()
+def comprehension_list():
+
+    def operation(x):
+        return x * x
+
+    squares = [i * i for i in range(1, 10)]
+    squares = [operation(i) for i in range(1, 10)]
+    print(squares)
+
+    def comparator(arg):
+        return arg in squares
+
+    no_squares = [i for i in range(100) if i not in squares]
+    no_squares = [i for i in range(100) if not comparator(i)]
+    print(no_squares)
+
+    def get_weather_data():
+        return random.randrange(90, 110)
+
+    hot_temps = [temp for _ in range(20) if (temp := get_weather_data()) >= 100]
+    print(hot_temps)
+
+
+def comprehension_set():
+    squares = {temp * temp for _ in range(20) if (temp := random.randrange(1, 100))}
+    print(squares)
+
+
+def comprehension_dict():
+    squares = {temp * temp: temp + 2 for _ in range(20) if (temp := random.randrange(1, 100))}
+    print(squares)
+
+
+comprehension_dict()
