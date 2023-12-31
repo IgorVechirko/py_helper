@@ -1,0 +1,22 @@
+{
+  "goods":[
+    {
+      "name": "pen",
+      "code": 1,
+      "amount": 100,
+      "price": 1
+    },
+    {
+      "name": "pencil",
+      "code": 2,
+      "amount": 100,
+      "price": 1
+    },
+    {
+      "name": "book",
+      "code": 3,
+      "amount": 10
+      "price": 100
+    }
+  ]
+}
